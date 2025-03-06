@@ -6,5 +6,5 @@ app.use(express.json());
 const app = express();
 
 app.listen(process.env.PORT, () => {
-    console.log("listening on port 8080");
+  console.log("listening on port 8080");
 });
