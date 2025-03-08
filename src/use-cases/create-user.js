@@ -8,7 +8,7 @@ export class CreateUserUseCase {
     // TODO: verificar se o e-mail já está em uso
 
     // gerar ID do usuário
-    const userID = uuidv4();
+    const userId = uuidv4();
 
     // criptografar a senha
     const hashedPassword = await bcrypt.hash(createUserParams.password, 10);
@@ -16,7 +16,7 @@ export class CreateUserUseCase {
     // inserir o usuário no banco de dados
     const user = {
       ...createUserParams,
-      id: userID,
+      id: userId,
       password: hashedPassword,
     };
 
