@@ -13,7 +13,7 @@ export class GetUserByIdController {
       const isIdValid = checkIfIdIsValid(httpRequest.params.userId);
 
       if (!isIdValid) {
-        return invalidIdResponse;
+        return invalidIdResponse();
       }
 
       const getUserByIdUseCase = new GetUserByIdUseCase();
