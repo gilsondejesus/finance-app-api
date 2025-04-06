@@ -8,7 +8,7 @@ import {
 } from "../helpers/index.js";
 import { UserNotFoundError } from "../../errors/use.js";
 
-export class GetTransactionsByUserId {
+export class GetTransactionsByUserIdController {
   constructor(getTransactionsByUserIdUseCase) {
     this.getTransactionsByUserIdUseCase = getTransactionsByUserIdUseCase;
   }
