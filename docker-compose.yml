@@ -3,7 +3,7 @@ version: "3"
 services:
   postgres:
     image: postgres
-    container_name: finance-api-postgres
+    container_name: finance-app-postgres
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
