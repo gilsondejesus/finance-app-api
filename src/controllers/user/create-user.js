@@ -1,6 +1,6 @@
 import { EmailAlreadyInUseError } from "../../errors/use.js";
 import { badRequest, created, serverError } from "../helpers/index.js";
-import { createUserSchema } from "../schemas/index.js";
+import { createUserSchema } from "../../schemas/index.js";
 import { ZodError } from "zod";
 
 export class CreateUserController {
