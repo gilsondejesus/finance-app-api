@@ -1,12 +1,11 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-}
+} 
 
 model User {
   id String @id @default(uuid())
@@ -14,4 +13,21 @@ model User {
   last_name String @db.VarChar(50)
   email String @db.VarChar(100) @unique
   password String @db.VarChar(100)
+  transactions Transaction[]
+}
+
+model Transaction {
+  id String @id @default(uuid())
+  user_id String
+  user User @relation(fields: [user_id], references: [id])
+  name String @db.VarChar(50)
+  date DateTime @db.Date
+  amount Decimal @db.Decimal(10, 2)
+  type TransactionType
+}
+
+enum TransactionType {
+  EARNING
+  EXPENSE
+  INVESTMENT
 }

@@ -8,6 +8,3 @@ node_modules
 .postgres
 .postgres-data
 
-# Prisma
-/src/generated
-/src/generated/prisma
